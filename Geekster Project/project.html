@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .main-container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .heading-container {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .player-details {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+    .block {
+        height: 70px;
+        width: 170px;
+        border: 1px solid darksalmon;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .button {
+        background-color:darksalmon;
+        border: none;
+        height: 70px;
+        width: 170px;
+    }
+    .add-players {
+        color: white;
+    }
+
+    .name-and-date-div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .score-board-div {
+        display: flex;
+        gap: 10px;
+    }
+
+    .board {
+        background-color: white;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        height: 85px;
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+        background-color: darksalmon;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .players {
+        display: flex;
+        height: 70%;
+        width: 100%;
+        padding: 75px;
+        flex-direction: column;
+        gap: 10px;
+        overflow: auto;
+    }
+    
+</style>
+<body>
+    <div class="main-container">
+        <div class="heading-container">
+            <h2>30 Days Of JavaScript Challenge Leaderboard</h2>
+        </div>
+        <div class="player-details">
+            <input  class="block" placeholder="First Name" type="name"></input>
+            <input  class="block" placeholder="Last Name" type="name"></input>
+            <input  class="block" placeholder="Country" type="text"></input>
+            <input  class="block" placeholder="Player Score" type="number"></input>
+            <button class="button" onclick="addNewList()"><h3 class="add-players">Add Players</h3></button>
+        </div>
+        <div class="players">
+        </div>
+    </div>
+
+
+    <script>
+
+        function addNewList () {
+
+            const block = document.getElementsByClassName('block')[0];
+            const block2 = document.getElementsByClassName('block')[1];
+            const block3 = document.getElementsByClassName('block')[2];
+            const score = document.getElementsByClassName('block')[3];
+        
+        const container = document.createElement('div')
+        container.setAttribute('class','container')
+        container.innerHTML = ` <div class="name-and-date-div">
+                                <h3 class="name">${block.value +" "+ block2.value}</h3>
+                                <input type="date">${new Date()}</input>
+                                </div>
+                                <div class="country-div">
+                                <h3 class="country-name">${block3.value}</h3>
+                                </div>
+                                <div class="score-div">
+                                <h3 class="score">${score.value}</h3>
+                                </div>
+                                <div class="score-board-div">
+                                <div class="board"><button class="delete-button" style="background-color:white;border:none;" ><i class="fa-sharp fa-solid fa-trash"></i></button></div>
+                                <div class="board">+5</h3></div>
+                                <div class="board" >-5</h3></div>
+                                </div>`;
+
+        const players = document.getElementsByClassName('players')[0];
+        players.appendChild(container);
+        // const deleteButton = document.getElementsByClassName('delete-button')[0];
+        // players.replaceChild(container);
+        }
+
+        
+
+        function incrementScore () {
+            const score = document.getElementsByClassName('block')[3];
+
+        }
+   
+    </script>
+</body>
+</html>
