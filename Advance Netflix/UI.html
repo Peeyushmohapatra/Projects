@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .fluid {
+        background-color: rgba(0, 0, 0, 0.683);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+    .img {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .containerr {
+        display: flex;
+    }
+
+    .drop {
+        background-color: transparent;
+        color: rgb(255, 255, 255);
+        flex: 0.2;
+    }
+
+    .btn-dark {
+        background-color: transparent;
+        border: 1px solid rgb(255, 255, 255);
+    }
+
+    .danger {
+        margin-left: 10px;
+        background-color: red;
+    }
+
+    .h1 {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        font-size: 3rem;
+    }
+
+    .p {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+
+    .q {
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        font-size: medium;
+    }
+
+    .divua {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .input {
+        width: 40%;
+        height: 65px;
+        border-radius: 0;
+    }
+
+    .red {
+        background-color: red;
+        border-radius: 0;
+    }
+
+    .display {
+        font-size:x-large;
+        font-weight: 400;
+    }
+
+    .black-one {
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        height: 70vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photu {
+        display: flex;
+        height: 100%;
+        position: relative;
+    }
+
+    .tv {
+        height: 10px;
+
+    }
+
+    .video {
+        position: absolute;
+        top: 5rem;
+        left: 4.5rem;
+        height: 80px;
+    }
+
+
+    .oscic {
+        -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    direction: ltr;
+    font-size: 16px;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color: #fff;
+    letter-spacing: 0!important;
+    overflow: hidden;
+    position: relative;
+    margin: -5% -10% 0 0;
+    }
+
+    .oscac {
+        -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    direction: ltr;
+    font-size: 16px;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color: #fff;
+    letter-spacing: 0!important;
+    overflow: hidden;
+    position: relative;
+    margin: 10% -10% 0 0;
+    } 
+
+    .our-story-card-img {
+        -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    direction: ltr;
+    font-size: 16px;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color: #fff;
+    letter-spacing: 0!important;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+    }
+
+    .our-story-card-animation {
+        -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    direction: ltr;
+    font-size: 16px;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    color: #fff;
+    letter-spacing: 0!important;
+    height: 100%;
+    left: 40%;
+    height: 47%;
+    position: absolute;
+    top: 34%;
+    transform: translate(-50%,-50%);
+    }
+
+    .bacha {
+        height:20rem;
+    }
+
+    .blacke {
+        background-color: black;
+        padding: 0;
+        height: 125vh;
+        width: 100vw;
+    }
+
+    .final {
+        margin-top: 40px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: black;
+    }
+
+    .last {
+        color: rgb(255, 255, 255);
+        font-size:x-large;
+        font-weight: 400;
+    }
+
+    .plus {
+        color: rgb(255, 255, 255);
+        font-weight: 100;
+        font-size: 4rem;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <img class="img" src="IN-en-20221107-popsignuptwoweeks-perspective_alpha_website_large.jpg">
+    </div>
+    <div class="container-fluid fluid">
+        <nav class="navbar containerr mb-5">
+            <div style="flex: 0.8;"><img style="height: 6rem;" src="580b57fcd9996e24bc43c529.png" alt=""></div>
+            <div class="dropdown drop">
+                <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  English
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+
+                <button type="button" class="btn btn-danger danger">Sign In</button>
+              </div>
+        </nav>
+        
+        <div class="container cccc">
+            <h1 class="display-1 text-center h1">Unlimited movies, TV</h1>
+            <h1 class="display-1 text-center h1">shows and more.</h1>
+            <p class="lead text-center p">Watch anywhere. Cancel anytime.</p>
+            <p class="lead text-center p">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div class="divua">
+                <input type="email" class="form-control input" placeholder="Email address">
+                <button type="button" class="btn btn-danger red"><h5 class="display-5 display">Get started ></h5></button>
+            </div>
+        </div>  
+    </div>
+    <hr style="border: none;background-color: rgb(34,34,34);height: 7px;margin: 0;">
+    <div class="container-fluid black-one">
+        <div class="container text-center">
+            <h1 class="display-1 h1">Enjoy on your TV.</h1>
+            <p class="lead p" style="margin: 0;">Watch on smart TVs, PlayStation, Xbox,</p>
+            <p class="lead p" style="margin: 0;">Chromecast, Apple TV, Blu-ray players and</p>
+            <p class="lead p" style="margin: 0;">more.</p>
+        </div>
+        <div class="container photu">
+            <div class="our-story-card-animation-container tv"><img alt="" class="our-story-card-img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" data-uia="our-story-card-img">
+                <div class="our-story-card-animation video" data-uia="our-story-card-animation"><video class="our-story-card-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted="" loop=""><source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4"></video><div class="our-story-card-animation-text"></div><div class="our-story-card-animation-custom" data-uia="our-story-card-custom" aria-hidden="true"></div></div></div>
+        </div>
+    </div>
+
+    <hr style="border: none;background-color: rgb(34,34,34);height: 7px;margin: 0;">
+
+    <div class="container-fluid black-one">
+
+        <div class="container photu">
+            <img src="mobile-0819.jpg" alt="">
+        </div>
+        <div class="container text-center">
+            <h1 class="display-1 h1">Download your shows</h1>
+            <h1 class="display-1 h1">to watch offline.</h1>
+            <p class="lead p" style="margin: 0;">Save your favourites easily and always have</p>
+            <p class="lead p" style="margin: 0;">something to watch.</p>
+        </div>
+    </div>
+
+    <hr style="border: none;background-color: rgb(25, 24, 24);height: 7px;margin: 0;">
+
+    
+    <div class="container-fluid black-one">
+
+       
+        <div class="container text-center">
+            <h1 class="display-1 h1">Watch everywhere.</h1>
+            <p class="lead p" style="margin: 0;">Stream unlimited movies and TV shows on</p>
+            <p class="lead p" style="margin: 0;">your phone, tablet, laptop, and TV.</p>
+        </div>
+        <div class="container photu">
+            <div class="our-story-card-img-container oscic"><div class="our-story-card-animation-container oscac"><img alt="" class="our-story-card-img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" data-uia="our-story-card-img"><div class="our-story-card-animation" data-uia="our-story-card-animation"><video class="our-story-card-video" data-uia="our-story-card-video" autoplay="" playsinline="" muted="" loop=""><source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4"></video><div class="our-story-card-animation-text"></div><div class="our-story-card-animation-custom" data-uia="our-story-card-custom" aria-hidden="true"></div></div></div></div>
+        </div>
+    </div>
+
+
+    <hr style="border: none;background-color: rgb(25, 24, 24);height: 7px;margin: 0;">
+
+    <div class="container-fluid black-one">
+
+       
+        <div class="container-fluid black-one">
+
+            <div class="container photu">
+                <img alt="" class="our-story-card-img" src="https://occ-0-38-58.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABYjXrxZKtrzxQRVQNn2aIByoomnlbXmJ-uBy7du8a5Si3xqIsgerTlwJZG1vMpqer2kvcILy0UJQnjfRUQ5cEr7gQlYqXfxUg7bz.png?r=420" data-uia="our-story-card-img">                   </div>
+            <div class="container text-center">
+                <h1 class="display-1 h1">Watch everywhere.</h1>
+                <p class="lead p" style="margin: 0;">Stream unlimited movies and TV shows on</p>
+                <p class="lead p" style="margin: 0;">your phone, tablet, laptop, and TV.</p>
+            </div>
+           
+        </div>
+    </div>
+        <hr style="border: none;background-color: rgb(0, 0, 0);height:7px;margin: 0;">
+
+        <div class="container-fluid blacke">
+            <div class="final">
+                <h1 class="display-1 h1">Frequently Asked Questions</h1>
+                <div style="height: 60%;width: 55%;display: flex;flex-direction: column;gap: 10px;flex-wrap: wrap;">
+                    <div style="height: 15%;width: 100%;background-color: rgb(48,48,48);padding: 2px 20px;display: flex;justify-content: space-between;align-items: center;">
+                        <h1 class="display-1 last">Frequently Asked Questions</h1>
+                        <h1 class="display-1 plus">+</h1>
+                    </div>
+                    <div style="height: 15%;width: 100%;background-color: rgb(48,48,48);padding: 2px 20px;display: flex;justify-content: space-between;align-items: center;">
+                        <h1 class="display-1 last">How much does Netflix cost?</h1>
+                        <h1 class="display-1 plus">+</h1>
+                    </div>
+                    <div style="height: 15%;width: 100%;background-color: rgb(48,48,48);padding: 2px 20px;display: flex;justify-content: space-between;align-items: center;">
+                        <h1 class="display-1 last">Where can I watch?</h1>
+                        <h1 class="display-1 plus">+</h1>
+                    </div>
+                    <div style="height: 15%;width: 100%;background-color: rgb(48,48,48);padding: 2px 20px;display: flex;justify-content: space-between;align-items: center;">
+                        <h1 class="display-1 last">How do I cancel?</h1>
+                        <h1 class="display-1 plus">+</h1>
+                    </div>
+                    <div style="height: 15%;width: 100%;background-color: rgb(48,48,48);padding: 2px 20px;display: flex;justify-content: space-between;align-items: center;">
+                        <h1 class="display-1 last">What can I watch on Netflix?</h1>
+                        <h1 class="display-1 plus">+</h1>
+                    </div>
+                    <div style="height: 15%;width: 100%;background-color: rgb(48,48,48);padding: 2px 20px;display: flex;justify-content: space-between;align-items: center;">
+                        <h1 class="display-1 last">Is Netflix good for kids?</h1>
+                        <h1 class="display-1 plus">+</h1>
+                    </div>
+                    
+                </div>
+                <p class="lead q" style="margin: 0;">Ready to watch? Enter your email to create or restart your membership.</p>
+                <div class="divua">
+                    <input type="email" class="form-control input" placeholder="Email address">
+                    <button type="button" class="btn btn-danger red"><h5 class="display-5 display">Get started ></h5></button>
+                </div>
+            </div>
+            
+        </div>
+
+</body>
+</html>

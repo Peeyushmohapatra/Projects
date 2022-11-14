@@ -121,6 +121,7 @@
         font-size: 36px;
         color:rgb(185, 185, 185) ;
         font-weight: 400;
+        cursor: pointer;
     }
 
     .task-container {
@@ -173,7 +174,7 @@
                 </div>
             </div>
                 <p class="new-list-text">
-                    Click <button class="new-list-button" onclick="addNewList()">+ New</button> To create new list and wait for project manager card. <br/>
+                    Click <button class="new-list-button"  onclick="addNewList()">+ New</button> To create new list and wait for project manager card. <br/>
                     Don't create a card by yourself to manage a good colaboration.
                 </p>
         </div>
@@ -194,7 +195,6 @@
                                    </div>
                                    </div>
                                    <div class="task-container">
-                        
                                    </div>`;
                                 
                                    const createTaskButton = document.createElement('div')
@@ -214,14 +214,14 @@
             const task = document.createElement('div');
             task.setAttribute('class',"task");
             task.innerHTML = `   <h4 class="task-title" contenteditable>New Task</h4>
-                                 <button class="task-date">${new Date().toDateString()}</button>`
+                                 <button class="task-date">${new Date().toLocaleDateString()}</button>`
 
             insertDatePicker(task)
             const taskContainer = list.getElementsByClassName('task-container')[0]
             taskContainer.appendChild(task);
             
-            const noOfTasks = list.getElementsByClassName("number-of-tasks")[0];
-            noOfTasks.innerText = Number(noOfTasks.innerText) + 1;
+            const numberOfTasks = list.getElementsByClassName("number-of-tasks")[0];
+            numberOfTasks.innerHTML = Number(numberOfTasks.innerText) + 1;
         }
 
         function insertDatePicker (task) {
